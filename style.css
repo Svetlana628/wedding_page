@@ -901,10 +901,10 @@ h1, h2, h3, h4 {
 /* Контакты */
 .contact-cards {
     display: flex;
-    flex-direction: column;
     gap: 2rem;
     margin-top: 2rem;
     justify-content: center;
+    align-items: center;
 }
 
 @media (min-width: 768px) {
