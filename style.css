@@ -309,7 +309,7 @@ h1, h2, h3, h4 {
     box-shadow: var(--shadow);
 }
 
-/* Ссылки на формы */
+/* Ссылка на чат */
 .chat-link {
     display: inline-flex;
     align-items: center;
@@ -561,371 +561,362 @@ h1, h2, h3, h4 {
     }
 }
 
-/* Стили для страницы реестра подарков */
+/* Стили для страницы afterparty */
 
-/* Ссылка "Назад" */
-.header__back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+/* Подзаголовок в хедере */
+.header__subtitle {
+    font-size: 1.2rem;
     color: var(--text-light);
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    transition: color 0.3s ease;
+    font-weight: 300;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
 }
 
-.header__back-link:hover {
-    color: var(--accent-color);
-}
-
-/* Текст информации */
-.info-text__paragraph {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
-    text-align: center;
-    line-height: 1.7;
-}
-
-/* Форма */
-.gift-form {
-    max-width: 800px;
-    margin: 2rem auto 0;
-    background-color: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-}
-
-.form-group {
-    margin-bottom: 2.5rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.form-group:last-of-type {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.form-group__title {
-    font-size: 1.5rem;
+/* Вступительный текст */
+.intro-text__paragraph {
+    font-size: 1.2rem;
     color: var(--text-color);
-    margin-bottom: 1rem;
-    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    text-align: center;
 }
 
-.form-group__subtitle {
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-}
-
-.form-row {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+/* Сетка возможностей */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 @media (min-width: 768px) {
-    .form-row {
-        flex-direction: row;
-    }
-    
-    .form-field {
-        flex: 1;
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-.form-field {
-    margin-bottom: 1.5rem;
+@media (min-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.form-field__label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-    font-weight: 500;
-    font-size: 0.95rem;
-}
-
-.form-field__input,
-.form-field__textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    color: var(--text-color);
-    background-color: #fcfaf7;
-    transition: all 0.3s ease;
-}
-
-.form-field__input:focus,
-.form-field__textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(212, 184, 165, 0.2);
-}
-
-.form-field__textarea {
-    min-height: 100px;
-    resize: vertical;
-}
-
-/* Категории подарков */
-.gift-categories {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.gift-category__title {
-    font-size: 1.3rem;
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    font-family: 'Cormorant Garamond', serif;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.gift-options {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.gift-option {
-    display: flex;
-    align-items: flex-start;
-    padding: 1.2rem;
-    border: 2px solid var(--border-color);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.feature-card {
     background-color: white;
-}
-
-.gift-option:hover {
-    border-color: var(--accent-color);
-    transform: translateY(-2px);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
     box-shadow: var(--shadow);
-}
-
-.gift-option__checkbox {
-    margin-right: 1rem;
-    margin-top: 0.3rem;
-    accent-color: var(--accent-color);
-    width: 1.2rem;
-    height: 1.2rem;
-}
-
-.gift-option__content {
-    flex: 1;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    align-items: center;
 }
 
-.gift-option__title {
-    font-weight: 500;
-    color: var(--text-color);
-    font-size: 1.1rem;
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-.gift-option__price {
+.feature-card__icon {
+    font-size: 3rem;
     color: var(--accent-color);
-    font-weight: 500;
-    font-size: 1rem;
-}
-
-.gift-option__description {
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-.gift-option__status {
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-top: 0.5rem;
-    align-self: flex-start;
-}
-
-.gift-option__status.available {
-    background-color: rgba(76, 175, 80, 0.1);
-    color: #4CAF50;
-}
-
-.gift-option__status.reserved {
-    background-color: rgba(255, 152, 0, 0.1);
-    color: #FF9800;
-}
-
-/* Кнопки формы */
-.form-actions {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.form-button {
-    display: inline-flex;
+    margin-bottom: 1.5rem;
+    height: 80px;
+    width: 80px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    padding: 1.2rem 2.5rem;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary-color);
+    border-radius: 50%;
 }
 
-.form-button--submit {
-    background-color: var(--accent-color);
-    color: white;
-    box-shadow: var(--shadow);
-}
-
-.form-button--submit:hover {
-    background-color: var(--text-light);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-.form-actions__note {
-    margin-top: 1rem;
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-/* Сообщение об успехе */
-.success-message {
-    display: none;
-    text-align: center;
-    padding: 3rem 2rem;
-    background-color: #f8f9fa;
-    border-radius: 15px;
-    margin-top: 2rem;
-    border: 2px solid #e8f5e9;
-}
-
-.success-message__icon {
-    font-size: 4rem;
-    color: #4CAF50;
-    margin-bottom: 1.5rem;
-}
-
-.success-message__title {
-    font-size: 2rem;
+.feature-card__title {
+    font-size: 1.4rem;
     color: var(--text-color);
     margin-bottom: 1rem;
     font-family: 'Cormorant Garamond', serif;
 }
 
-.success-message__text {
-    font-size: 1.1rem;
+.feature-card__text {
     color: var(--text-light);
-    margin-bottom: 2rem;
-    line-height: 1.7;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* Таймлайн для afterparty*/
+.timeline-simple {
+    margin-top: 3rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.success-message__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.8rem 1.5rem;
-    border: 2px solid var(--accent-color);
-    border-radius: 50px;
-    transition: all 0.3s ease;
+.timeline-simple__item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+    position: relative;
 }
 
-.success-message__link:hover {
+.timeline-simple__item::before {
+    content: '';
+    position: absolute;
+    left: 60px;
+    top: 0;
+    bottom: -2.5rem;
+    width: 2px;
     background-color: var(--accent-color);
-    color: white;
+    opacity: 0.2;
 }
 
-/* Информация о доставке */
-.delivery-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 2rem;
+.timeline-simple__item:last-child::before {
+    display: none;
 }
 
-@media (min-width: 768px) {
-    .delivery-info {
-        flex-direction: row;
-        justify-content: center;
-    }
-    
-    .delivery-info__item {
-        flex: 1;
-        max-width: 300px;
-    }
-}
-
-.delivery-info__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem;
-    background-color: var(--primary-color);
-    border-radius: 10px;
-}
-
-.delivery-info__icon {
-    font-size: 2.5rem;
+.timeline-simple__time {
+    width: 80px;
+    flex-shrink: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
     color: var(--accent-color);
-    margin-bottom: 1rem;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 3px;
 }
 
-.delivery-info__title {
+.timeline-simple__content {
+    flex: 1;
+    padding-left: 30px;
+    position: relative;
+}
+
+.timeline-simple__content::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.timeline-simple__title {
     font-size: 1.3rem;
     color: var(--text-color);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
     font-family: 'Cormorant Garamond', serif;
+    line-height: 1.3;
 }
 
-.delivery-info__text {
+.timeline-simple__text {
     color: var(--text-light);
     line-height: 1.6;
 }
 
-/* Контакты */
-.contact-cards {
+/* Для длинных интервалов времени */
+.timeline-simple__time--interval {
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .timeline-simple__item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .timeline-simple__item::before {
+        left: 30px;
+        top: 40px;
+    }
+    
+    .timeline-simple__time {
+        width: 100%;
+        text-align: left;
+        padding-right: 0;
+        padding-left: 45px;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    
+    .timeline-simple__content {
+        padding-left: 45px;
+    }
+    
+    .timeline-simple__content::before {
+        left: 22px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .timeline-simple__time {
+        width: 70px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Правила */
+.rules-list {
     display: flex;
+    flex-direction: column;
     gap: 2rem;
     margin-top: 2rem;
-    justify-content: center;
-    align-items: center;
+}
+
+.rule-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.rule-item__icon {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    flex-shrink: 0;
+    margin-top: 0.3rem;
+}
+
+.rule-item__content {
+    flex: 1;
+}
+
+.rule-item__title {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.rule-item__text {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Кнопки подтверждения */
+.confirmation-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 3rem 0 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (min-width: 768px) {
-    .contact-cards {
+    .confirmation-options {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .confirmation-button {
+        flex: 1;
+        max-width: 250px;
+    }
+}
+
+.confirmation-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 15px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.confirmation-button--yes {
+    background-color: #4CAF50;
+    color: white;
+    border: 2px solid #4CAF50;
+}
+
+.confirmation-button--no {
+    background-color: #f5f5f5;
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+}
+
+.confirmation-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.confirmation-button--yes:hover {
+    background-color: #3d8b40;
+}
+
+.confirmation-button--no:hover {
+    background-color: #e0e0e0;
+}
+
+.confirmation-button i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.confirmation-button span {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.confirmation-button small {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.confirmation-note {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.confirmation-note i {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+}
+
+/* Контактная информация */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .contact-info {
         flex-direction: row;
     }
 }
 
-.contact-card {
+.contact-person {
     flex: 1;
-    max-width: 250px;
+    max-width: 300px;
     text-align: center;
     padding: 2rem;
     background-color: white;
@@ -934,67 +925,85 @@ h1, h2, h3, h4 {
     border: 1px solid var(--border-color);
 }
 
-.contact-card__icon {
+.contact-person__icon {
     font-size: 2.5rem;
     color: var(--accent-color);
     margin-bottom: 1rem;
 }
 
-.contact-card__title {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.contact-card__name {
-    font-size: 1.4rem;
+.contact-person__name {
+    font-size: 1.5rem;
     color: var(--text-color);
     margin-bottom: 0.5rem;
     font-family: 'Cormorant Garamond', serif;
 }
 
-.contact-card__phone {
-    color: var(--accent-color);
-    font-weight: 500;
+.contact-person__role {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
 }
 
-/* Футер для страницы подарков */
-.footer__names {
+/* Прощальное сообщение */
+.farewell-message {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.farewell-message__text {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.farewell-signature {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin: 1.5rem 0;
-}
-
-.footer__name {
-    font-size: 1.8rem;
-    color: var(--text-color);
     font-family: 'Cormorant Garamond', serif;
 }
 
-.footer__ampersand {
-    font-size: 1.5rem;
+.farewell-signature__name {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.farewell-signature__ampersand {
+    font-size: 1.8rem;
     color: var(--accent-color);
     font-weight: 300;
 }
 
-.footer__link {
-    display: inline-flex;
+/* Футер */
+.footer__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+    .footer__info {
+        flex-direction: row;
+        justify-content: center;
+        gap: 3rem;
+    }
+}
+
+.footer__info-item {
+    display: flex;
     align-items: center;
     gap: 0.8rem;
     color: var(--text-light);
-    text-decoration: none;
-    margin-top: 1rem;
-    padding: 0.8rem 1.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 50px;
-    transition: all 0.3s ease;
 }
 
-.footer__link:hover {
+.footer__info-item i {
     color: var(--accent-color);
-    border-color: var(--accent-color);
 }
