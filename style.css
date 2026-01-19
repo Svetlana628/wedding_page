@@ -1006,3 +1006,15 @@ h1, h2, h3, h4 {
 .footer__info-item i {
     color: var(--accent-color);
 }
+
+/* Плавное появление */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
